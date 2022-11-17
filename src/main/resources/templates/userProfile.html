@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to [[${viewedUser.firstname}]] [[${viewedUser.lastname}]]'s profile</h1>
+    <p>About Me: [[${viewedUser.bio}]]</p>
+    <h2>My Recent Posts</h2>
+    <ul>
+        <li th:each="post : ${viewedUser.posts}" th:text="${post}"></li>
+    </ul>
+</div>
+</body>
+</html>

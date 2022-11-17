@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div class="container">
+
+    <h1>Posts from Your Community</h1>
+    <th:block  th:each="user: ${peopleIfollowList}">
+        <p class="userIfollow-usrname" th:text="${user.username}"></p>
+        <th:block th:each="post: ${user.posts}">
+            <p id="timestamp" th:text="${post.timeStamp}"></p>
+            <p th:text="${post.body}"></p>
+        </th:block>
+    </th:block>
+</div>
+</body>
+</html>
