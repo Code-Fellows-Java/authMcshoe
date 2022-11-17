@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div th:replace="fragments/stylelinks :: stylelinks"></div>
+</head>
+<body>
+<div class="container">
+    <div th:replace="fragments/nav :: nav"></div>
+    <h2>Users in CodeFellowship</h2>
+    <p>Checkout their profiles and click Follow!</p>
+    <div class="aboutuser" th:each="user : ${users}">
+        <h2><a th:href="${'/user/' + user.id}">[[${user.username}]]</a></h2>
+        <p>[[${user.bio}]]</p>
+        <form action="/follow" method="post">
+            <input type="hidden" name="followUser" th:value="${user.id}">
+            <input class="button" type="submit" value="Follow Me!" />
+        </form>
+    </div>
+</div>
+</body>
+</html>

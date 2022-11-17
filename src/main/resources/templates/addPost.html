@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <div th:replace="fragments/stylelinks :: stylelinks"></div>
+    <title>add a Post</title>
+</head>
+<body>
+<div class="container">
+    <div th:replace="fragments/nav :: nav"></div>
+
+    <form action="/addPost" method="POST">
+        <label for="body">Add a Post</label>
+        <textarea name="body" id="body"></textarea>
+        <input type="submit" value="Create Post">
+    </form>
+</div>
+</body>
+</html>

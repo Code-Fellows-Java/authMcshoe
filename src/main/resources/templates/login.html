@@ -1,20 +1,22 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h1>Login</h1>
-<h2>(or sign up <a href="/signup">here</a>)</h2>
-<form action="/login" method="POST">
-    <label>Username</label>
-    <input type="text" name="username">
+<div class="container">
+    <h1>Log In</h1>
+    <div th:if="${param.error}">
+        There was an error! Please try your username and password again.
+    </div>
+    <form action="/login" method="POST">
+        <input name="username" />
+        <input name="password" type="password" />
+        <input type="submit" />
+    </form>
+</div>
 
-    <label>Password</label>
-    <input type="password" name="password">
-
-    <input type="submit" value="Log in">
-</form>
 </body>
 </html>
